@@ -1,0 +1,395 @@
+<!--
+  Olá! Este é um comentário HTML.
+  Tudo que estiver entre "<!--" e "-->" é ignorado pelo navegador.
+  Usamos comentários para deixar notas para nós mesmos ou para outros programadores.
+-->
+
+<!-- 
+  O <!DOCTYPE html> diz ao navegador que estamos usando a versão mais moderna do HTML (HTML5).
+  É como dizer "Olá, navegador, prepare-se para ler um documento HTML!"
+-->
+<!DOCTYPE html>
+
+<!-- 
+  A tag <html> é a "mãe" de todo o seu site. Tudo (menos o DOCTYPE) fica dentro dela.
+  O 'lang="pt-BR"' ajuda o navegador e os mecanismos de busca a saber que seu site está em Português do Brasil.
+-->
+<html lang="pt-BR">
+
+<!--
+  A tag <head> (cabeça) guarda informações "invisíveis" sobre o seu site.
+  Coisas como o título da aba, configurações, e (muito importante) nossos estilos CSS!
+-->
+<head>
+  <!-- Esta tag <meta> define o conjunto de caracteres para UTF-8.
+       Isso é super importante para que nossos acentos e o "ç" apareçam corretamente! -->
+  <meta charset="UTF-8">
+  
+  <!-- Esta tag <meta> é essencial para sites modernos.
+       Ela diz ao navegador (especialmente em celulares) para ajustar o site ao tamanho da tela.
+       É o primeiro passo para um design "responsivo" (que funciona bem em qualquer tamanho de tela). -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- A tag <title> (título) define o texto que aparece na aba do navegador. -->
+  <title>Espaço Hair - Salão de Beleza</title>
+
+  <!-- 
+    A tag <style> (estilo) é onde colocamos nosso código CSS.
+    CSS (Cascading Style Sheets) é o que dá cor, forma e beleza ao nosso HTML.
+    Como você pediu, estamos colocando o CSS aqui dentro em vez de um arquivo separado.
+  -->
+  <style>
+    /*
+      Este é um comentário CSS. É diferente do comentário HTML!
+      Usamos "/*" e "*/" para criar comentários em CSS.
+    */
+
+    /*
+      O seletor "*" (asterisco) é um seletor universal.
+      Ele aplica essas regras em TODOS os elementos da página.
+      'box-sizing: border-box;' é uma regra moderna que torna a criação de layouts MUITO mais fácil.
+      Basicamente, ela faz com que o padding (espaçamento interno) e a borda não aumentem o tamanho total do elemento.
+    */
+    * {
+      box-sizing: border-box;
+    }
+
+    /*
+      Aqui, estamos estilizando a tag <body> (corpo) do nosso site.
+      O 'body' é o que envolve todo o conteúdo visível.
+    */
+    body {
+      /* 'font-family' define a fonte (tipo de letra) do site. 
+         'Arial' é uma fonte comum e 'sans-serif' é a opção de reserva se o Arial não estiver disponível. */
+      font-family: Arial, sans-serif;
+      
+      /* 'background-color' define a cor de fundo. Usamos um rosa bem clarinho, como você pediu! */
+      background-color: #FDF0F5; /* Este é um tom de rosa claro */
+      
+      /* 'color' define a cor do TEXTO principal. Um cinza escuro é mais fácil de ler que o preto puro. */
+      color: #333;
+      
+      /* 'margin: 0;' e 'padding: 0;' removem espaçamentos padrão do navegador, para termos controle total. */
+      margin: 0;
+      padding: 0;
+
+      /* 'transition' cria uma animação suave. 
+         Aqui, estamos dizendo: "Se a cor de fundo mudar, faça isso suavemente em 0.3 segundos".
+         Isso é para a nossa interação com o botão! */
+      transition: background-color 0.3s ease;
+    }
+
+    /*
+      Esta é uma "classe". Em CSS, classes começam com um ponto (.).
+      Vamos usar esta classe no JavaScript para aplicar o novo estilo de fundo.
+    */
+    body.tema-alternativo {
+      /* Este é um fundo dourado/creme bem clarinho, para ser a segunda cor. */
+      background-color: #FFFBEA;
+    }
+
+    /*
+      Vamos estilizar o "container" principal do nosso site.
+      No HTML, criamos uma <div> com a classe "container" para organizar nosso conteúdo.
+    */
+    .container {
+      /* 'max-width' define a largura máxima. Isso impede que o site fique "esticado" em telas muito grandes. */
+      max-width: 900px;
+      
+      /* 'margin: 40px auto;' é um truque! 
+         '40px' dá um espaço em cima e embaixo.
+         'auto' nas laterais (esquerda/direita) faz o container se centralizar na página. */
+      margin: 40px auto;
+      
+      /* 'padding' é o espaçamento INTERNO. Pense nisso como o "recheio" da caixa. */
+      padding: 20px;
+      
+      /* Damos um fundo branco ao nosso container para ele se destacar do fundo rosa. */
+      background-color: #FFFFFF;
+      
+      /* 'border-radius' arredonda as bordas. Fica com um visual mais moderno. */
+      border-radius: 10px;
+      
+      /* 'box-shadow' adiciona uma sombra suave. 
+         (horizontal | vertical | "blur" (esfumaçado) | cor)
+         Isso dá um efeito de "profundidade", como se o card estivesse flutuando. */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /*
+      Estilizando nosso <header> (cabeçalho).
+    */
+    header {
+      /* 'text-align: center;' centraliza todo o texto dentro do cabeçalho. */
+      text-align: center;
+      /* 'padding-bottom' dá um espaço extra abaixo do cabeçalho. */
+      padding-bottom: 20px;
+      /* 'border-bottom' cria uma linha decorativa. 
+         (espessura | tipo da linha | cor)
+         Usamos uma cor dourada, como você pediu! */
+      border-bottom: 2px solid #DAA520; /* Dourado */
+    }
+
+    /*
+      Estilizando o <h1> (título principal) dentro do <header>.
+    */
+    header h1 {
+      /* 'color' define a cor do texto. Aqui usamos o dourado! */
+      color: #DAA520; /* Dourado */
+      /* 'margin: 0;' remove qualquer margem padrão do <h1> para termos controle. */
+      margin: 0;
+    }
+
+    /*
+      Estilizando a tag <main> (conteúdo principal).
+    */
+    main {
+      /* 'padding' dá um respiro para o conteúdo, separando-o do cabeçalho e rodapé. */
+      padding: 20px 0;
+    }
+
+    /*
+      Estilizando todos os parágrafos (<p>)
+    */
+    p {
+      /* 'font-size' muda o tamanho do texto. */
+      font-size: 1.1em; /* 'em' é uma unidade relativa, um pouco maior que o padrão. */
+      /* 'line-height' define o espaçamento entre as linhas, tornando a leitura mais confortável. */
+      line-height: 1.6;
+      /* Centraliza o parágrafo de introdução. */
+      text-align: center;
+    }
+    
+    /*
+      Estilizando os subtítulos (<h2>)
+    */
+    h2 {
+      /* O 'h2' também terá a cor dourada. */
+      color: #DAA520;
+    }
+
+    /*
+      Estilizando a nossa lista de serviços (<ul>)
+    */
+    .servicos-lista {
+      /* 'list-style: none;' remove as "bolinhas" padrão da lista. */
+      list-style: none;
+      /* 'padding: 0;' remove o recuo padrão da lista. */
+      padding: 0;
+    }
+
+    /*
+      Estilizando cada item da lista (<li>)
+    */
+    .servicos-lista li {
+      /* Fundo rosa clarinho para cada item, para destacar. */
+      background-color: #FDF0F5;
+      /* 'margin-bottom' dá um espaço entre os itens. */
+      margin-bottom: 10px;
+      /* 'padding' dá um espaço interno no item. */
+      padding: 15px;
+      /* Bordas arredondadas! */
+      border-radius: 5px;
+      /* Aqui está um detalhe dourado!
+         Uma borda de 5px de espessura, sólida, dourada, mas SÓ na esquerda.
+      */
+      border-left: 5px solid #DAA520;
+    }
+
+    /*
+      Estilizando a seção de interação.
+    */
+    .interacao {
+      /* Centraliza o conteúdo (o botão). */
+      text-align: center;
+      /* 'margin-top' dá um espaço acima dessa seção. */
+      margin-top: 30px;
+      /* 'padding-top' dá um espaço interno acima, antes da borda. */
+      padding-top: 20px;
+      /* Uma borda dourada no TOPO para separar a seção. */
+      border-top: 1px solid #F9E6E8; /* Rosa bem clarinho */
+    }
+
+    /*
+      Estilizando o nosso botão!
+    */
+    #botao-tema {
+      /* Cor de fundo dourada! */
+      background-color: #DAA520;
+      /* Cor do texto. Branco fica ótimo em cima do dourado. */
+      color: #FFFFFF;
+      /* 'border: none;' remove a borda feia padrão do botão. */
+      border: none;
+      /* Espaçamento interno para o botão ficar "gordinho" e fácil de clicar. */
+      padding: 12px 25px;
+      /* Tamanho da fonte do texto do botão. */
+      font-size: 1em;
+      /* 'font-weight: bold;' deixa o texto em negrito. */
+      font-weight: bold;
+      /* Bordas arredondadas. */
+      border-radius: 5px;
+      /* 'cursor: pointer;' faz o mouse virar uma "mãozinha" quando passa por cima, indicando que é clicável. */
+      cursor: pointer;
+      /* 'transition' de novo! Agora, animamos a cor de fundo e a sombra suavemente. */
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    /*
+      Esta é uma "pseudo-classe".
+      A regra ':hover' (flutuar) é ativada quando o usuário passa o mouse por cima do botão.
+    */
+    #botao-tema:hover {
+      /* Escurecemos um pouco o dourado para dar um feedback visual. */
+      background-color: #C0901C; /* Um dourado mais escuro */
+      /* 'transform: scale(1.05);' faz o botão crescer um pouquinho (5%), dando um efeito "pop". */
+      transform: scale(1.05);
+    }
+    
+    /*
+      Estilizando o <footer> (rodapé)
+    */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #AAA; /* Um cinza clarinho para o rodapé. */
+    }
+
+  </style>
+</head>
+
+<!--
+  A tag <body> (corpo) é onde fica TODO o conteúdo visível do seu site:
+  textos, imagens, botões, etc.
+-->
+<body>
+
+  <!-- 
+    Usamos uma <div> (divisão) com a classe "container".
+    Pense na <div> como uma caixa para organizar nosso conteúdo.
+    Demos a ela a classe "container" para que o CSS saiba como estilizar esta caixa específica.
+  -->
+  <div class="container">
+
+    <!-- 
+      A tag <header> (cabeçalho) é usada para o topo do site.
+      É uma tag "semântica", o que significa que ela diz ao navegador qual é o *propósito* do conteúdo.
+    -->
+    <header>
+      <!-- <h1> é a tag de título principal. Todo site deve ter apenas um <h1>. -->
+      <h1>Bem-vinda ao Espaço Hair</h1>
+    </header>
+
+    <!-- 
+      A tag <main> (principal) guarda o conteúdo principal da sua página.
+      Também é uma tag semântica.
+    -->
+    <main>
+      <!-- <p> é a tag de parágrafo, usada para textos normais. -->
+      <p>Seu novo visual começa aqui! Oferecemos os melhores tratamentos com profissionais incríveis.</p>
+
+      <!-- 
+        <section> (seção) é usada para agrupar conteúdos que têm relação entre si.
+        Esta seção é sobre nossos serviços.
+      -->
+      <section class="servicos">
+        <!-- <h2> é um subtítulo (título de nível 2). -->
+        <h2>Nossos Serviços</h2>
+        
+        <!-- <ul> (unordered list) cria uma lista com "bolinhas" (que nós removemos no CSS). -->
+        <ul class="servicos-lista">
+          <!-- <li> (list item) é cada item da lista. -->
+          <li>Corte Feminino & Masculino</li>
+          <li>Coloração e Mechas</li>
+          <li>Manicure e Pedicure (Unhas de Gel)</li>
+          <li>Maquiagem e Penteados para Festas</li>
+          <li>Dia da Noiva</li>
+        </ul>
+      </section>
+
+      <!-- 
+        Esta é a seção para a nossa interação.
+      -->
+      <section class="interacao">
+        <h2>Gostou das cores?</h2>
+        <p>Clique no botão abaixo para ver uma mágica!</p>
+
+        <!-- 
+          A tag <button> (botão)!
+          Demos a ele um 'id="botao-tema"'. O 'id' é um nome ÚNICO na página.
+          Vamos usar esse 'id' no JavaScript para "encontrar" este botão específico.
+        -->
+        <button id="botao-tema">Mudar o Tema!</button>
+      </section>
+
+    </main>
+
+    <!-- 
+      A tag <footer> (rodapé) é usada para o finalzinho do site.
+      Geralmente colocamos informações de copyright ou links.
+    -->
+    <footer>
+      <p>© 2025 Espaço Hair. Criado com 💖 por (Seu Nome Aqui)!</p>
+    </footer>
+
+  </div> <!-- Fim da <div> container -->
+
+  <!--
+    A tag <script> (roteiro) é onde colocamos nosso código JavaScript.
+    JavaScript é a linguagem que dá "vida" e "interatividade" ao site.
+    É melhor colocá-la no final do <body>, para que a página (HTML e CSS) carregue primeiro,
+    e só depois o script seja executado.
+  -->
+  <script>
+    /*
+      Este é um comentário JavaScript!
+      Usamos "//" para comentários de uma linha ou "/* ... */" para múltiplas linhas.
+    */
+    
+    // Para garantir que nosso código só rode DEPOIS que todo o HTML foi carregado,
+    // colocamos nosso código dentro de um "ouvinte de evento".
+    // Ele "ouve" o evento 'DOMContentLoaded', que acontece quando o documento está pronto.
+    document.addEventListener('DOMContentLoaded', function() {
+      
+      // --- PASSO 1: Encontrar os elementos que queremos controlar ---
+
+      // 'const' cria uma variável (um "apelido") que não vai mudar.
+      // 'document.getElementById('botao-tema')' é como dizemos ao JavaScript:
+      // "Vá no documento HTML e encontre o elemento que tem o ID 'botao-tema'".
+      const meuBotao = document.getElementById('botao-tema');
+      
+      // Aqui, estamos pegando a tag <body> inteira para podermos mudar a cor dela.
+      const corpoDoSite = document.body;
+
+      // --- PASSO 2: Criar a função que faz a mágica ---
+
+      // 'function' declara uma nova função (um bloco de tarefas).
+      // Demos a ela o nome de 'mudarTema'.
+      function mudarTema() {
+        // 'console.log()' é seu melhor amigo! Ele imprime mensagens no console do navegador.
+        // (Aperte F12 no navegador para ver o console). É ótimo para testar.
+        console.log("O botão foi clicado!");
+
+        // Esta é a linha mágica!
+        // 'corpoDoSite.classList' é a lista de classes CSS do <body>.
+        // '.toggle()' é um "interruptor".
+        // Ele vai ADICIONAR a classe 'tema-alternativo' se ela não existir.
+        // E vai REMOVER a classe 'tema-alternativo' se ela já existir.
+        // Lembra que criamos a classe '.tema-alternativo' lá no CSS? É aqui que ela é usada!
+        corpoDoSite.classList.toggle('tema-alternativo');
+      }
+
+      // --- PASSO 3: Dizer ao botão para "ouvir" o clique ---
+
+      // 'meuBotao.addEventListener()' é como dizemos: "Ei, botão, fique atento!"
+      // O primeiro argumento, 'click', é o evento que queremos ouvir.
+      // O segundo argumento, 'mudarTema', é a FUNÇÃO que queremos executar quando o clique acontecer.
+      // Note que não usamos parênteses 'mudarTema()', pois queremos passar a função, e não executá-la agora.
+      meuBotao.addEventListener('click', mudarTema);
+
+    }); // Fim do 'DOMContentLoaded'
+    
+  </script>
+
+</body>
+</html>
